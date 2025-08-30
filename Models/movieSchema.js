@@ -1,0 +1,80 @@
+const mongoose = require('mongoose')
+
+// Schema Creation
+const movieSchema = new mongoose.Schema({
+    name:{
+        type:String
+    },
+    duration:{
+        type:String
+    },
+    genre:{
+        type:[String]
+    },          
+    trailer:{
+        type:String
+    },
+    movImg:{
+        type:String
+    },
+    date:{
+        type:String
+    },
+    bookedCount:{
+        type:String
+    },
+    rating:{
+        type:String
+    },
+    votes:{
+        type:String
+    },
+    screen:{
+        type:String
+    },
+    language:{
+        type:String
+    },
+    bannerImg:{
+        type:String
+    },
+    movPics:{
+        type:[String]
+    },
+    reviews:[
+        {
+            username:String,
+            comment:String,
+            rating:Number,
+            date:{type:Date,default:Date.now}
+        }
+    ],
+    cast:[
+        {
+            name:String,
+            role:String,
+            image:String
+        }
+    ],
+    description:{
+        type:String
+    },
+    movieDate:[
+        {
+            day:String,
+            month:String
+        }
+    ],
+    movieTime:{
+        type:[String]
+    },
+    theatreName:{
+        type:String
+    },
+    ticketPrice:{
+        type:String
+    }
+})
+
+const movies = mongoose.model('movies',movieSchema)
+module.exports=movies
