@@ -12,7 +12,11 @@ const router = require('./Routes/router')
 const tkServer = express()
 
 // Use
-tkServer.use(cors())
+tkServer.use(cors({
+    origin: "https://tickets-booking-app.netlify.app", 
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}))
 tkServer.use(express.json())
 tkServer.use(router)
 
